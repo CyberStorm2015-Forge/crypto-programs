@@ -2,7 +2,6 @@
 """
 A no-frills implementation of a timelock algorithm.
 """
-from time import *
 import md5
 import binascii
 
