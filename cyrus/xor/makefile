@@ -5,3 +5,6 @@ xor: xor.o
 
 xor.o: xor.cc
 	g++ -Wall -w -c xor.cc -std=c++11
+
+clean:
+	$(RM) xor.o

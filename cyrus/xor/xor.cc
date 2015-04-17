@@ -8,11 +8,11 @@
  *  directory, XOR'ing the two and printing the result
  *  to stdout.>
  ****************************************************/
+#include <stdio.h>
 #include <vector>
 #include <fstream>
 #include <iostream>
 #include <bitset>
-#include <stdio.h>
 using namespace std;
 
 // function prototypes
@@ -40,8 +40,7 @@ int main(int argc, char** argv)
 /* Processes a given data file with a given keyfile,
    XOR'ing the binary data of each and printing the result
    to stdout.*/
-void Process(char const* datafile, char const* keyfile)
-{
+void Process(char const* datafile, char const* keyfile) {
     // read the data for file and key in as a vector of bytes
     vector<char> filebytes = ReadAllBytes(datafile);
     printf("Number of file bytes: %lu\n", filebytes.size());
@@ -50,8 +49,7 @@ void Process(char const* datafile, char const* keyfile)
     printf("Number of key bytes: %lu\n", keybytes.size());
 
     // if the file and key don't have the same number of bytes, quit
-    if (filebytes.size() != keybytes.size())
-    {
+    if (filebytes.size() != keybytes.size()) {
         printf("File (%lu bytes) and Key (%lu bytes) aren't same size\n", filebytes.size(), keybytes.size());
         exit(1);
     }
@@ -68,8 +66,7 @@ void Process(char const* datafile, char const* keyfile)
     vector < bitset<8> > plaintextbits;
     // XOR operation, storing the results as bitsets in plaintextbits
     int i = 0;
-    while (i < filebits.size())
-    {
+    while (i < filebits.size()) {
         plaintextbits.push_back(filebits[i]^keybits[i]);
         i++;
     }
@@ -82,8 +79,7 @@ void Process(char const* datafile, char const* keyfile)
 
 /* Takes a filename and returns a vector of chars
    representing the bytes of that file. */
-static vector<char> ReadAllBytes(char const* file)
-{
+static vector<char> ReadAllBytes(char const* file) {
     ifstream ifs(file, ios::binary|ios::ate);
     ifstream::pos_type pos = ifs.tellg();
 
