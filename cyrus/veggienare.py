@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """
-A command-line program to encrypt and decrypt ascii using
-the Vigenere cipher.
+A command-line program to encrypt/decrypt messages in Vigenere cipher.
 """
 
 import argparse

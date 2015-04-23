@@ -1,9 +1,7 @@
 #!/usr/bin/env python
-"""
-A no-frills implementation of a timelock algorithm.
-"""
-import md5
+"""A no-frills implementation of a timelock algorithm."""
 import binascii
+import md5
 
 __author__ = "Cyrus Struble"
 __email__ = "QuestionableRobot@gmail.com"
@@ -38,7 +36,7 @@ def timelock(epoch_time):
     else:
         result = normal_hash_to_timelock(md5_hash)
 
-    return((md5_hash, result))
+    return ((md5_hash, result))
 
 
 def normal_hash_to_timelock(md5_hash):
@@ -65,7 +63,7 @@ def normal_hash_to_timelock(md5_hash):
             result += n
             num_appends += 1
 
-    return(result)
+    return (result)
 
 
 def less_than_two_digit_hash_to_timelock(md5_hash):
@@ -88,7 +86,7 @@ def less_than_two_digit_hash_to_timelock(md5_hash):
             result += c
             num_appends += 1
 
-    return(result)
+    return (result)
 
 
 def less_than_two_letter_hash_to_timelock(md5_hash):
@@ -110,7 +108,7 @@ def less_than_two_letter_hash_to_timelock(md5_hash):
             result += n
             num_appends += 1
 
-    return(result)
+    return (result)
 
 
 if __name__ == '__main__':
